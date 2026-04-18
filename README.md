@@ -10,9 +10,9 @@ Secret Suite is a free, open-source cryptographic toolkit that runs entirely on 
 
 | Version | Location | Description |
 |---------|----------|-------------|
-| Web app | `app/tools/secret-suite/` | Next.js UI, runs server-side |
-| Node.js CLI | `secret-suite/secret-util.js` | Interactive terminal CLI |
-| Python 3 CLI | `secret-suite//secret-util.py` | Interactive terminal CLI |
+| Web app | `app/secret-suite/` | Next.js UI, runs server-side |
+| Node.js CLI | `cli/secret-suite/secret-util.js` | Interactive terminal CLI |
+| Python 3 CLI | `cli/secret-suite//secret-util.py` | Interactive terminal CLI |
 
 ---
 
@@ -20,25 +20,25 @@ Secret Suite is a free, open-source cryptographic toolkit that runs entirely on 
 
 ### Web app
 ```bash
-git clone https://github.com/deedixdev/secret-suite
-cd secret-suite
+git clone https://github.com/deedixdev/secret-suite/web
+cd secret-suite/web
 npm install
 npm run dev
-# open http://localhost:3000/tools/secret-suite
+# open http://localhost:3000/web/secret
 ```
 
 ### Node.js CLI
 ```bash
 # requires Node.js >= 18
 npm install bcryptjs argon2 qrcode openpgp
-node secret-suite/secret-util.js
+node cli/secret-suite/secret-util.js
 ```
 
 ### Python 3 CLI
 ```bash
 # requires Python >= 3.9
-pip install -r secret-suite/requirements.txt
-python secret-suite/secret-util.py
+pip install -r cli/secret-suite/requirements.txt
+python cli/secret-suite/secret-util.py
 ```
 
 ---
@@ -69,7 +69,7 @@ python secret-suite/secret-util.py
 |------|-------------|
 | Plain | Raw value only |
 | Labeled | Key: value format |
-| Labeled + log | Key: value, also written to `secret-util.log` |
+| Labeled + log | Key: value, also written to `secret-util.log` - python | `crypto-util.log` - node.js|
 
 ---
 
@@ -90,7 +90,7 @@ bcrypt>=4.0.0
 argon2-cffi>=23.1.0
 cryptography>=42.0.0
 ```
-See `secret-suite/requirements.txt`.
+See `cli/secret-suite/requirements.txt`.
 
 ---
 

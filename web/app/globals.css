@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Secret Suite Design Tokens — Dark (default) ────────────────────────── */
+:root,
+[data-ss-theme="dark"] {
+  --ss-bg-primary:    #050508;
+  --ss-bg-secondary:  #0D0D12;
+  --ss-bg-tertiary:   #141419;
+  --ss-bg-elevated:   #1a1a22;
+  --ss-border:        rgba(255,255,255,0.06);
+  --ss-border-hover:  rgba(255,255,255,0.12);
+
+  --ss-text-primary:   #F8F8FF;
+  --ss-text-secondary: #A8A8B8;
+  --ss-text-tertiary:  #4A4A5A;
+
+  --ss-accent:        #2563EB;
+  --ss-accent-hover:  #1D4ED8;
+  --ss-accent-glow:   rgba(37,99,235,0.18);
+  --ss-accent-dim:    rgba(37,99,235,0.12);
+
+  --ss-green:         #10B981;
+  --ss-green-dim:     rgba(16,185,129,0.12);
+  --ss-amber:         #F59E0B;
+  --ss-amber-dim:     rgba(245,158,11,0.12);
+  --ss-red:           #EF4444;
+  --ss-red-dim:       rgba(239,68,68,0.12);
+  --ss-purple:        #8B5CF6;
+  --ss-purple-dim:    rgba(139,92,246,0.12);
+
+  --ss-card-bg:       rgba(255,255,255,0.032);
+  --ss-card-border:   rgba(255,255,255,0.07);
+
+  --ss-shadow-sm:     0 1px 3px rgba(0,0,0,0.5);
+  --ss-shadow-md:     0 4px 16px rgba(0,0,0,0.55);
+  --ss-shadow-lg:     0 8px 32px rgba(0,0,0,0.65);
+
+  --ss-radius-sm:     6px;
+  --ss-radius-md:     10px;
+  --ss-radius-lg:     14px;
+
+  --ss-header-bg:     rgba(5,5,8,0.88);
+  --ss-header-text:   #F8F8FF;
+
+  --ss-btn-bg:        #FFFFFF;
+  --ss-btn-text:      #0D0D14;
+  --ss-btn-hover-bg:  #E8E8EE;
+}
+
+/* ─── Secret Suite Design Tokens — Light ─────────────────────────────────── */
+[data-ss-theme="light"] {
+  --ss-bg-primary:    #F5F6FA;
+  --ss-bg-secondary:  #FFFFFF;
+  --ss-bg-tertiary:   #EDEEF4;
+  --ss-bg-elevated:   #E4E5EE;
+  --ss-border:        rgba(0,0,0,0.08);
+  --ss-border-hover:  rgba(0,0,0,0.16);
+
+  --ss-text-primary:   #0D0D14;
+  --ss-text-secondary: #4A4A62;
+  --ss-text-tertiary:  #9090A8;
+
+  --ss-accent:        #2563EB;
+  --ss-accent-hover:  #1D4ED8;
+  --ss-accent-glow:   rgba(37,99,235,0.14);
+  --ss-accent-dim:    rgba(37,99,235,0.1);
+
+  --ss-green:         #059669;
+  --ss-green-dim:     rgba(5,150,105,0.1);
+  --ss-amber:         #D97706;
+  --ss-amber-dim:     rgba(217,119,6,0.1);
+  --ss-red:           #DC2626;
+  --ss-red-dim:       rgba(220,38,38,0.1);
+  --ss-purple:        #7C3AED;
+  --ss-purple-dim:    rgba(124,58,237,0.1);
+
+  --ss-card-bg:       rgba(0,0,0,0.025);
+  --ss-card-border:   rgba(0,0,0,0.07);
+
+  --ss-shadow-sm:     0 1px 3px rgba(0,0,0,0.1);
+  --ss-shadow-md:     0 4px 16px rgba(0,0,0,0.1);
+  --ss-shadow-lg:     0 8px 32px rgba(0,0,0,0.12);
+
+  --ss-header-bg:     rgba(245,246,250,0.92);
+  --ss-header-text:   #0D0D14;
+
+  --ss-btn-bg:        #0D0D14;
+  --ss-btn-text:      #F8F8FF;
+  --ss-btn-hover-bg:  #252530;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+@keyframes ss-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+@keyframes ss-slide-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes ss-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.9; }
+}
+@keyframes ss-copy-flash {
+  0%   { background: var(--ss-green-dim); }
+  100% { background: transparent; }
+}
+
+.ss-fade-in       { animation: ss-fade-in  0.22s ease both; }
+.ss-slide-in      { animation: ss-slide-in 0.2s ease both;  }
+.ss-skeleton      { animation: ss-pulse 1.4s ease-in-out infinite; background: var(--ss-bg-elevated); border-radius: var(--ss-radius-sm); }
+.ss-copy-flash    { animation: ss-copy-flash 0.4s ease forwards; }
+
+/* ─── Utilities ────────────────────────────────────────────────────────────── */
+.ss-scrollbar::-webkit-scrollbar        { width: 5px; }
+.ss-scrollbar::-webkit-scrollbar-track  { background: transparent; }
+.ss-scrollbar::-webkit-scrollbar-thumb  { background: var(--ss-bg-elevated); border-radius: 99px; }
+
+/* Sidebar — 3px hairline scrollbar */
+.ss-sidebar::-webkit-scrollbar        { width: 3px; }
+.ss-sidebar::-webkit-scrollbar-track  { background: transparent; }
+.ss-sidebar::-webkit-scrollbar-thumb  { background: var(--ss-border-hover); border-radius: 99px; }
+.ss-sidebar                            { scrollbar-width: thin; scrollbar-color: var(--ss-border-hover) transparent; }
+
+.ss-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body { background: var(--ss-bg-primary); color: var(--ss-text-primary); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+}
+
+/* ── Mobile overlay for sidebar ────────────────────────────────────────────── */
+.ss-sidebar-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+}
+.ss-sidebar-overlay.open { display: block; }
+
+/* ── Mobile sidebar drawer ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-sidebar-drawer {
+    position: fixed !important;
+    top: 0; left: 0; bottom: 0;
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: transform 0.22s cubic-bezier(.4,0,.2,1);
+    width: 260px !important;
+  }
+  .ss-sidebar-drawer.open { transform: translateX(0); }
+  .ss-sidebar-desktop-only { display: none !important; }
+  /* Show hamburger on mobile */
+  .ss-hamburger { display: flex !important; }
+  /* Collapse the header 3-col grid: left=auto, search=fills, right=auto */
+  header {
+    grid-template-columns: auto 1fr auto !important;
+    gap: 8px !important;
+  }
+  /* Search container fills its 1fr column */
+  .ss-header-search {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+  .ss-header-title { display: none !important; }
+  .ss-badge-local  { display: none !important; }
+  .ss-logo-icon    { display: none !important; }
+  .ss-main-content { padding: 16px 16px 32px !important; }
+  .ss-tool-titlebar { padding: 0 16px !important; }
+}
+
