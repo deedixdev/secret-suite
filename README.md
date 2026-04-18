@@ -20,11 +20,11 @@ Secret Suite is a free, open-source cryptographic toolkit that runs entirely on 
 
 ### Web app
 ```bash
-git clone https://github.com/deedixdev/secret-suite/web
-cd secret-suite/web
+git clone https://github.com/deedixdev/secret-suite/
+cd web
 npm install
 npm run dev
-# open http://localhost:3000/web/secret
+# open http://localhost:3000/secret
 ```
 
 ### Node.js CLI
