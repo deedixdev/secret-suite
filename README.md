@@ -12,7 +12,7 @@ Secret Suite is a free, open-source cryptographic toolkit that runs entirely on 
 |---------|----------|-------------|
 | Web app | `app/secret-suite/` | Next.js UI, runs server-side |
 | Node.js CLI | `cli/secret-suite/secret-util.js` | Interactive terminal CLI |
-| Python 3 CLI | `cli/secret-suite//secret-util.py` | Interactive terminal CLI |
+| Python 3 CLI | `cli/secret-suite/secret-util.py` | Interactive terminal CLI |
 
 ---
 
